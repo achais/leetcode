@@ -2,8 +2,6 @@ package com.achais.leetcode;
 
 public class Solution69 {
     public int mySqrt(int x) {
-        // sqrt2 = (sqrt + x / sqrt) / 2
-        int sqrt = 0;
         return (int) Math.sqrt(x);
     }
 
