@@ -1,24 +1,16 @@
 package com.achais.leetcode;
 
 public class Solution58 {
-    public int lengthOfLastWord(String s) {
-        char[] chars = s.toCharArray();
-        int length = 0;
-        for (int i = chars.length - 1; i >= 0; i--) {
-            if (chars[i] != ' ') {
-                length++;
-            } else if (length > 0){
-                return length;
-            }
-        }
-        return length;
+    public String reverseLeftWords(String s, int n) {
+        return s.substring(n) + s.substring(0, n);
     }
 
     public static void main(String[] args) {
-        String stdin = "Hello World";
+        String s = "Hello World";
+        int n = 2;
 
         Solution58 solution = new Solution58();
-        Integer stdout = solution.lengthOfLastWord(stdin);
+        String stdout = solution.reverseLeftWords(s, n);
 
         System.out.println(stdout);
     }
