@@ -1,6 +1,9 @@
 package com.achais.leetcode;
 
 public class Solution1351 {
+    /**
+     * 暴力
+     */
     public int countNegatives(int[][] grid) {
         int ans = 0;
         for (int[] ints : grid) {
