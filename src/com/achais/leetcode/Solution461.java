@@ -1,6 +1,9 @@
 package com.achais.leetcode;
 
 public class Solution461 {
+    /**
+     * 布赖恩·克尼根算法
+     */
     public int hammingDistance(int x, int y) {
         int distance = 0;
         int xor = x ^ y;
