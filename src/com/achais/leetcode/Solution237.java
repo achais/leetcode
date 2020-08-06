@@ -1,10 +1,10 @@
 package com.achais.leetcode;
 
-class ListNode {
+class ListNode237 {
     int val;
-    ListNode next;
+    ListNode237 next;
 
-    ListNode(int x) {
+    ListNode237(int x) {
         val = x;
     }
 }
@@ -18,13 +18,13 @@ class ListNode {
  * }
  */
 public class Solution237 {
-    public void deleteNode(ListNode node) {
+    public void deleteNode(ListNode237 node) {
         node.val = node.next.val;
         node.next = node.next.next;
     }
 
     public static void main(String[] args) {
-        ListNode node = new ListNode(1);
+        ListNode237 node = new ListNode237(1);
 
         Solution237 solution = new Solution237();
         solution.deleteNode(node);
