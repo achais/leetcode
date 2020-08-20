@@ -20,7 +20,7 @@ public class Solution169 {
     }
 
     public static void main(String[] args) {
-        int[] nums = {2,2,1,1,1,2,2};
+        int[] nums = {2, 2, 1, 1, 1, 2, 2};
 
         Solution169 solution = new Solution169();
         Integer stdout = solution.majorityElement(nums);
