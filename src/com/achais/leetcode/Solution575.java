@@ -11,24 +11,8 @@ public class Solution575 {
             map.merge(candy, 1, Integer::sum);
         }
 
-        int middle = candies.length / 2;
-        System.out.println(middle);
-
-        int[] values = new int[map.size()];
-        int index = 0;
-        for (Integer value : map.values()) {
-            values[index++] = value;
-        }
-
-        Arrays.sort(values);
-//        int sister = 0;
-//        for (int i = 0; i < values.length; i++) {
-//            sister += values[i];
-//            if (sister >= middle) {
-//                return i + 1;
-//            }
-//        }
-        return 0;
+        //如果种类小于等于糖果数一半就等于种类
+        return Math.min(map.keySet().size(), candies.length / 2);
     }
 
     public static void main(String[] args) {
