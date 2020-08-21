@@ -8,7 +8,9 @@ public class Solution1189 {
         Map<Character, Integer> map = new HashMap<>();
 
         for (char c : text.toCharArray()) {
-            map.merge(c, 1, Integer::sum);
+            if ("balloon".contains(String.valueOf(c))) {
+                map.merge(c, 1, Integer::sum);
+            }
         }
 
         int[] arr = {
