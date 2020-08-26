@@ -1,8 +1,6 @@
 package com.achais.leetcode;
 
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
 
 public class Solution1103 {
     public int[] distributeCandies(int candies, int num_people) {
