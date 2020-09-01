@@ -1,8 +1,5 @@
 package com.achais.leetcode;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Solution1556 {
     public String thousandSeparator(int n) {
         if (n == 0) return "0";
