@@ -1,8 +1,5 @@
 package com.achais.leetcode;
 
-import java.util.Arrays;
-import java.util.List;
-
 public class Solution1287 {
     public int findSpecialInteger(int[] arr) {
         int step = arr.length / 4;
