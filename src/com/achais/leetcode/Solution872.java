@@ -25,15 +25,10 @@ public class Solution872 {
 
     public void DFS(TreeNode872 root, List<Integer> list) {
         if (root != null) {
-            if (root.left != null) {
-                DFS(root.left, list);
-            }
-            if (root.left == null && root.right == null) {
+            if (root.left == null && root.right == null)
                 list.add(root.val);
-            }
-            if (root.right != null) {
-                DFS(root.right, list);
-            }
+            DFS(root.left, list);
+            DFS(root.right, list);
         }
     }
 
