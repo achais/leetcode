@@ -10,6 +10,19 @@ class MyComparator implements Comparator<Integer> {
 
 public class Solution1046 {
     public int lastStoneWeight(int[] stones) {
+        if (stones.length == 1) {
+            return stones[0];
+        }
+        Arrays.sort(stones);
+        while (stones[stones.length - 2] != 0) {
+            stones[stones.length - 1] = stones[stones.length - 1] - stones[stones.length - 2];
+            stones[stones.length - 2] = 0;
+            Arrays.sort(stones);
+        }
+        return stones[stones.length - 1];
+    }
+
+    public int lastStoneWeight3(int[] stones) {
         Queue<Integer> queue = new PriorityQueue<>(new MyComparator());
         for (int stone : stones) {
             queue.offer(stone);
