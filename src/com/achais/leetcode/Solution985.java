@@ -4,25 +4,25 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-class Pair<K, V> {
+class Pair985<K, V> {
     public K key;
     public V value;
 
-    public Pair(K key, V value) {
+    public Pair985(K key, V value) {
         this.key = key;
         this.value = value;
     }
 }
 
-class Bucket {
-    private List<Pair<Integer, Integer>> bucket;
+class Bucket985 {
+    private List<Pair985<Integer, Integer>> bucket;
 
-    Bucket() {
+    Bucket985() {
         this.bucket = new LinkedList<>();
     }
 
     public Integer get(Integer key) {
-        for (Pair<Integer, Integer> integerIntegerPair : this.bucket) {
+        for (Pair985<Integer, Integer> integerIntegerPair : this.bucket) {
             if (integerIntegerPair.key.equals(key)) {
                 return integerIntegerPair.value;
             }
@@ -36,21 +36,21 @@ class Bucket {
 
     public void update(Integer key, Integer value) {
         boolean found = false;
-        for (Pair<Integer, Integer> integerIntegerPair : this.bucket) {
+        for (Pair985<Integer, Integer> integerIntegerPair : this.bucket) {
             if (integerIntegerPair.key.equals(key)) {
                 integerIntegerPair.value = value;
                 found = true;
             }
         }
         if (!found) {
-            this.bucket.add(new Pair<>(key, value));
+            this.bucket.add(new Pair985<>(key, value));
         }
     }
 }
 
 class MyHashMap985 {
 
-    List<Bucket> hashTable;
+    List<Bucket985> hashTable;
     int keySpace = 2069;
 
     /**
@@ -59,7 +59,7 @@ class MyHashMap985 {
     public MyHashMap985() {
         hashTable = new ArrayList<>(keySpace);
         for (int i = 0; i < keySpace; i++) {
-            hashTable.add(new Bucket());
+            hashTable.add(new Bucket985());
         }
     }
 
