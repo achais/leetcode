@@ -1,5 +1,6 @@
 package com.achais.leetcode.offer;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
@@ -15,7 +16,41 @@ class TreeNode32 {
 }
 
 public class Solution32 {
-    public List<List<Integer>> levelOrder(TreeNode32 root) {
+    /*
+    第一道
+     */
+    public int[] levelOrder(TreeNode32 root) {
+        List<Integer> list = new ArrayList<>();
+        Queue<TreeNode32> queue = new LinkedList<>();
+        queue.offer(root);
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            while (size-- > 0) {
+                TreeNode32 node = queue.poll();
+                if (node != null) {
+                    list.add(node.val);
+                    if (node.left != null) {
+                        queue.offer(node.left);
+                    }
+                    if (node.right != null) {
+                        queue.offer(node.right);
+                    }
+                }
+            }
+        }
+
+        int[] ans = new int[list.size()];
+        int index = 0;
+        for (Integer integer : list) {
+            ans[index++] = integer;
+        }
+        return ans;
+    }
+
+    /*
+    第二道
+     */
+    public List<List<Integer>> levelOrder2(TreeNode32 root) {
         List<List<Integer>> ans = new LinkedList<>();
         Queue<TreeNode32> queue = new LinkedList<>();
         queue.offer(root);
@@ -46,7 +81,7 @@ public class Solution32 {
         TreeNode32 root = new TreeNode32(2);
 
         Solution32 solution = new Solution32();
-        List<List<Integer>> stdout = solution.levelOrder(root);
+        List<List<Integer>> stdout = solution.levelOrder2(root);
 
         System.out.println(stdout);
     }
