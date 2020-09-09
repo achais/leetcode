@@ -17,9 +17,48 @@ class TreeNode32 {
 
 public class Solution32 {
     /*
+    第二道
+     */
+    public List<List<Integer>> levelOrder(TreeNode32 root) {
+        if (root == null) {
+            return new ArrayList<>();
+        }
+
+        List<List<Integer>> ans = new ArrayList<>();
+        Queue<TreeNode32> queue = new LinkedList<>();
+        queue.offer(root);
+        boolean go = true;
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            List<Integer> t = new ArrayList<>();
+            while (size-- > 0) {
+                TreeNode32 node = queue.poll();
+                if (node != null) {
+                    if (go) {
+                        t.add(node.val);
+                    } else {
+                        t.add(0, node.val);
+                    }
+
+                    if (node.left != null) {
+                        queue.offer(node.left);
+                    }
+                    if (node.right != null) {
+                        queue.offer(node.right);
+                    }
+                }
+            }
+            ans.add(t);
+            go = !go;
+        }
+
+        return ans;
+    }
+
+    /*
     第一道
      */
-    public int[] levelOrder(TreeNode32 root) {
+    public int[] levelOrder1(TreeNode32 root) {
         List<Integer> list = new ArrayList<>();
         Queue<TreeNode32> queue = new LinkedList<>();
         queue.offer(root);
