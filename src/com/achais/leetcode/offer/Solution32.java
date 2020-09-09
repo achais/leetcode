@@ -30,7 +30,7 @@ public class Solution32 {
         boolean go = true;
         while (!queue.isEmpty()) {
             int size = queue.size();
-            List<Integer> t = new ArrayList<>();
+            List<Integer> t = new LinkedList<>();
             while (size-- > 0) {
                 TreeNode32 node = queue.poll();
                 if (node != null) {
