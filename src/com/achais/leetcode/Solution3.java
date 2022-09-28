@@ -2,6 +2,9 @@ package com.achais.leetcode;
 
 import java.util.Arrays;
 
+/**
+ * 滑动窗口问题
+ */
 public class Solution3 {
     public int lengthOfLongestSubstring(String s) {
         int n = s.length();
