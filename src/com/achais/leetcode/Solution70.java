@@ -13,11 +13,24 @@ public class Solution70 {
         return ret[n - 1];
     }
 
+    public int climbStairs2(int n) {
+        if (n == 1) return 1;
+        if (n == 2) return 2;
+        int[] memo = new int[n+1];
+        memo[0] = 0;
+        memo[1] = 1;
+        memo[2] = 2;
+        for (int i=3; i<=n ;i++) {
+            memo[i] = memo[i-1] + memo[i-2];
+        }
+        return memo[n];
+    }
+
     public static void main(String[] args) {
         int stdin = 10;
 
         Solution70 solution = new Solution70();
-        int stdout = solution.climbStairs(stdin);
+        int stdout = solution.climbStairs2(stdin);
 
         System.out.println(stdout);
     }
